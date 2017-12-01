@@ -55,15 +55,12 @@ class StringHashtable(Hashtable):
         # returns a number 0-9
 
     def debug_print(self):
-        test = self.buckets[1].walk_dfs_inorder_return(self.buckets[1].root)
-        print(test)
-        # for i in range(len(self.buckets)):
-        #     if self.buckets[i].root is not None:
-        #
-        #         print('{}: {}'.format(i, self.buckets[i].root.key))
-        #     else:
-        #         print('{}: {}'.format(i, self.buckets[i].root))
-
+        for i in range(len(self.buckets)):
+            if self.buckets[i].root is not None:
+                li = self.buckets[i].walk_bfs_return(self.buckets[i].root)
+                print('{}: {}'.format(i, ', '.join(li), end=''))
+            else:
+                print('{}: {}'.format(i, self.buckets[i].root))
 
 
 class GuidHashtable(Hashtable):

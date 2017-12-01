@@ -81,15 +81,6 @@ class BinaryTree(object):
             print('{}'.format(node.value))
             self.walk_dfs_inorder(node.right)
 
-    def walk_dfs_inorder_return(self, node):
-        if(node != None):
-            inorder_list = []
-            return self.walk_dfs_inorder(node.left)
-            inorder_list.append(node.key)
-            return self.walk_dfs_inorder(node.right)
-            print(inorder_list)
-        print('test')
-
 
     def walk_dfs_preorder(self, node):
         if(node != None):
@@ -121,6 +112,26 @@ class BinaryTree(object):
                 q.append(current_node.right)
 
             current_level += 1
+
+    def walk_bfs_return(self, node):
+        li = []
+        q = deque([node])
+        current_level = 1
+
+        while len(q) > 0:
+
+            current_node = q.popleft()
+            li.append(current_node.key)
+
+            if current_node.left != None:
+                q.append(current_node.left)
+
+            if current_node.right != None:
+                q.append(current_node.right)
+
+            current_level += 1
+
+        return li
 
     def debug_print(self):
         current_level = [self.root]
