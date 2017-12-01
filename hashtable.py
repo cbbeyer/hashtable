@@ -12,8 +12,8 @@ class Hashtable(ABC):
             new_binary_tree = BinaryTree()
             self.buckets.append(new_binary_tree)
 
-    def set(self, key, value, index):
-        # print('{}...{}, {}'.format(index, key, value))
+    def set(self, key, value):
+        index = self.get_hash(key)
         self.buckets[index].set(key, value)
 
     def get(key):
@@ -29,7 +29,6 @@ class Hashtable(ABC):
 class StringHashtable(Hashtable):
     '''String hashtable class'''
 
-    # pass value as well?
     def get_hash(self, key):
         ascii_values = ''
         for c in key:
@@ -44,15 +43,7 @@ class StringHashtable(Hashtable):
         ascii_values = int(ascii_values) / 3
         index = int(ascii_values) % 9
 
-        # PASS VALUE AS PARAMETER?
-        value = key.lower()
-
-        self.set(key, value, index)
-
-
-        # call set in this method
-        # store to array
-        # returns a number 0-9
+        return index
 
     def debug_print(self):
         for i in range(len(self.buckets)):

@@ -22,7 +22,8 @@ def main():
     with open('strings.txt', newline='') as f:
         for line_i, line in enumerate(f):
             line = line.rstrip()
-            string_hash_table.get_hash(line)
+            value = line.lower()
+            string_hash_table.set(line, value)
 
     string_hash_table.debug_print()
 
