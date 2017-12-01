@@ -27,6 +27,12 @@ def main():
 
     string_hash_table.debug_print()
 
+    # Should we be looking up on the key? or the value?
+    print()
+    print(string_hash_table.get('Indian Meal Moth'))
+    print(string_hash_table.get('Orb-Weaving Spiders (Banded Garden Spider)'))
+
+    print()
 
 # Runner
 if __name__ == '__main__':

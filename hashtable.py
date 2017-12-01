@@ -16,8 +16,11 @@ class Hashtable(ABC):
         index = self.get_hash(key)
         self.buckets[index].set(key, value)
 
-    def get(key):
-        pass
+    def get(self, key):
+        index = self.get_hash(key)
+
+        return self.buckets[index].get(key)
+
 
     def remove(key):
         pass

@@ -37,7 +37,7 @@ class BinaryTree(object):
     def get(self, key):
         try:
             node = self._find(key, self.root)
-            print(node.value)
+            return(node.key)
         except:
             print('This key could not be found in the binary tree')
 
