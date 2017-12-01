@@ -8,7 +8,21 @@ from hashtable import Hashtable, StringHashtable, GuidHashtable, ImageHashtable
 def main():
     '''Main program'''
 
-    test_hash = StringHashtable()
+    string_hash_table = StringHashtable()
+
+    string_hash_table.get_hash('Aphids')
+    string_hash_table.get_hash('Carpet/Warehouse Beetles')
+    string_hash_table.get_hash('Armyworms/Cutworms')
+    string_hash_table.get_hash('Longhorned/Roundheaded Wood Borers')
+    string_hash_table.get_hash('Weevils/Bark Beetles')
+    string_hash_table.get_hash('Ants')
+
+    string_hash_table.debug_print()
+
+    # with open('strings.txt', newline='') as f:
+    #     for line_i, line in enumerate(f):
+    #         line = line.rstrip()
+    #         string_hash_table.get_hash(line)
 
 
 # Runner
